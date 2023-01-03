@@ -75,39 +75,32 @@
                                         </svg>
                                         TRENDING
                                     </a>
-                                    <a href="/newest" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-base font-light rounded-md" x-state-description="undefined: &quot;bg-gray-900 text-white&quot;, undefined: &quot;text-gray-300 hover:bg-gray-700 hover:text-white&quot;">
-                                        <svg class="text-gray-400 group-hover:text-gray-300 mr-4 flex-shrink-0 h-6 w-6" x-state-description="undefined: &quot;text-gray-300&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-300&quot;" x-description="Heroicon name: outline/users" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
-                                        </svg>
-                                        TERBARU
-                                    </a>
-                                    <a href="/popular" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 pb-4 text-base font-light rounded-md" x-state-description="undefined: &quot;bg-gray-900 text-white&quot;, undefined: &quot;text-gray-300 hover:bg-gray-700 hover:text-white&quot;">
+                                    <a href="/fresh" class="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 pb-4 text-base font-light rounded-md" x-state-description="undefined: &quot;bg-gray-900 text-white&quot;, undefined: &quot;text-gray-300 hover:bg-gray-700 hover:text-white&quot;">
                                         <svg class="text-gray-400 group-hover:text-gray-300 mr-4 flex-shrink-0 h-6 w-6" x-state-description="undefined: &quot;text-gray-300&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-300&quot;" x-description="Heroicon name: outline/folder" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
                                         </svg>
-                                        POPULAR
+                                        FRESH
                                     </a>
-                                    @for ($i = 1; $i < 4; $i++)<a href="/cantik" class="text-gray-400 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-1 text-small font-light rounded-md" x-state-description="undefined: &quot;bg-gray-900 text-white&quot;, undefined: &quot;text-gray-300 hover:bg-gray-700 hover:text-white&quot;">
+                                    @for ($i = 1; $i <= 10; $i++)<a href="/cantik" class="text-gray-400 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-1 text-sm font-base rounded-md" x-state-description="undefined: &quot;bg-gray-900 text-white&quot;, undefined: &quot;text-gray-300 hover:bg-gray-700 hover:text-white&quot;">
                                         <svg class="text-gray-400 group-hover:text-gray-300 mr-2 flex-shrink-0 h-4 w-4" x-state-description="undefined: &quot;text-gray-300&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-300&quot;" x-description="Heroicon name: outline/calendar" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
                                         </svg>
                                         cantik
                                     </a>
-                                    <a href="/nsfw" class="text-gray-400 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-1 text-base font-light rounded-md" x-state-description="undefined: &quot;bg-gray-900 text-white&quot;, undefined: &quot;text-gray-300 hover:bg-gray-700 hover:text-white&quot;">
-                                        <svg class="text-gray-400 group-hover:text-gray-300 mr-2 flex-shrink-0 h-4 w-4" x-state-description="undefined: &quot;text-gray-300&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-300&quot;" x-description="Heroicon name: outline/calendar" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
-                                        </svg>
-                                        nsfw
-                                    </a>
-                                    <a href="/otomotif" class="text-gray-400 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-1 text-base font-light rounded-md" x-state-description="undefined: &quot;bg-gray-900 text-white&quot;, undefined: &quot;text-gray-300 hover:bg-gray-700 hover:text-white&quot;">
-                                        <svg class="text-gray-400 group-hover:text-gray-300 mr-2 flex-shrink-0 h-4 w-4" x-state-description="undefined: &quot;text-gray-300&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-300&quot;" x-description="Heroicon name: outline/calendar" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 8.25h15m-16.5 7.5h15m-1.8-13.5l-3.9 19.5m-2.1-19.5l-3.9 19.5" />
-                                        </svg>
-                                        otomotif
-                                    </a>
                                     @endfor
                                 </nav>
+                                <div class="absolute bottom-0 left-0 w-full mb-2 text-center">
+                                    <a href="/about" class="text-gray-500 hover:bg-gray-700 hover:text-white px-2 py-1 text-xs font-base rounded-md">
+                                        About
+                                    </a>
+                                    <a href="/privacy" class="text-gray-500 hover:bg-gray-700 hover:text-white px-2 py-1 text-xs font-base rounded-md">
+                                        Privacy
+                                    </a>
+                                    <a href="/terms" class="text-gray-500 hover:bg-gray-700 hover:text-white px-2 py-1 text-xs font-base rounded-md">
+                                        Terms
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="w-40 flex-shrink-0" aria-hidden="true">
@@ -144,7 +137,7 @@
                         <a href="/fotogenik"><span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-base text-red-800">#fotogenik</span></a>
                     </div> --}}
                     
-                    <p class="relative text-sm font-light text-gray-300 text-shadow-sm line-clamp-2 md:flex-grow">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit unde ut esse cupiditate temporibus. Et aspernatur quis nemo impedit. Repellendus numquam quos aperiam laboriosam deleniti totam nemo alias ducimus maiores?</p>
+                    <p class="relative text-sm font-light text-gray-300 drop-shadow-md line-clamp-2 md:flex-grow">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit unde ut esse cupiditate temporibus. Et aspernatur quis nemo impedit. Repellendus numquam quos aperiam laboriosam deleniti totam nemo alias ducimus maiores?</p>
                     <figure class="relative mt-2">
                         <div class="flex items-start">
                             <div class="inline-flex flex-shrink-0 rounded-full border-2 border-gray-300">
@@ -189,30 +182,7 @@
             @endfor
     </div>
     </main>
-
-    <footer class="w-full h-screen grid place-items-center text-gray-800 dark:text-gray-300 bg-white dark:bg-black">
-        <div class="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-            <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
-                <div class="px-5 py-2">
-                    <a href="/about" class="text-base text-gray-400 hover:text-gray-900">About</a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="/privacy" class="text-base text-gray-400 hover:text-gray-900">Privacy</a>
-                </div>
-                <div class="px-5 py-2">
-                    <a href="/terms" class="text-base text-gray-400 hover:text-gray-900">Terms</a>
-                </div>
-            </nav>
-            <p class="mt-8 text-center text-base text-gray-300">&copy; 2023 Dear Boss. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script type="text/javascript">
-    window.addEventListener('resize', () => {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-    });
-    </script>
+    
 </body>
 
 </html>
