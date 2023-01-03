@@ -8,14 +8,14 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'DearBoss') }}</title>
     <meta name="description" content="Your daily dose of funny memes, GIFs, videos and weird news stories. We deliver hundreds of new memes daily and much more humor anywhere you go.">
-    <link rel="canonical" href="https://dearboss.id/">
+    <link rel="canonical" href="{{ config('app.url') }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@dearboss">
     <meta name="twitter:image" content="https://images-cdn.9gag.com/img/9gag-og.png">
     <meta property="og:title" content="DearBoss - Best Funny Memes and Breaking News">
     <meta property="og:site_name" content="DearBoss">
     <meta property="og:description"  content="Your daily dose of funny memes, GIFs, videos and weird news stories. We deliver hundreds of new memes daily and much more humor anywhere you go.">
-    <meta property="og:url" content="https://dearboss.id/">
+    <meta property="og:url" content="{{ config('app.url') }}">
     <meta property="og:image" content="https://images-cdn.9gag.com/img/9gag-og.png">
     <meta property="og:type" content="website">
     <link rel="apple-touch-icon" sizes="180x180" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-180.png">
@@ -25,6 +25,12 @@
     <meta name="theme-color" content="#000">
     <link rel="stylesheet" href="/fonts/inter.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <style type="text/css">
+    .h-screen {
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
+    }
+    </style>
 </head>
 
 <body>
@@ -189,6 +195,14 @@
         @endfor
     </main>
 
+    <script type="text/javascript">
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        window.addEventListener('resize', () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        });
+    </script>
 </body>
 
 </html>
