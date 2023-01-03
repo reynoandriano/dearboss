@@ -144,17 +144,17 @@
                     <a href="/fotogenik"><span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-base text-red-800">#fotogenik</span></a>
                 </div> --}}
                 
-                <p class="relative text-sm font-light text-gray-300 line-clamp-2 md:flex-grow">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit unde ut esse cupiditate temporibus. Et aspernatur quis nemo impedit. Repellendus numquam quos aperiam laboriosam deleniti totam nemo alias ducimus maiores?</p>
+                <p class="relative text-sm font-light text-gray-300 text-shadow-sm line-clamp-2 md:flex-grow">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit unde ut esse cupiditate temporibus. Et aspernatur quis nemo impedit. Repellendus numquam quos aperiam laboriosam deleniti totam nemo alias ducimus maiores?</p>
                 <figure class="relative mt-2">
                     <div class="flex items-start">
                         <div class="inline-flex flex-shrink-0 rounded-full border-2 border-gray-300">
-                            <img class="h-12 w-12 rounded-full" src="/images/photo.avif" width="48" height="48" alt="Judith Black" title="Judith Black"
+                            <img class="h-12 w-12 rounded-full" src="/images/bossbaby.webp" width="48" height="48" alt="Judith Black" title="Judith Black"
                                 @if ($i > 1) loading="lazy"
                                 @else loading="eager"
                                 @endif >
                         </div>
                         <div class="ml-4">
-                            <div class="text-base font-medium text-white mb-1">Judith Black</div>
+                            <div class="text-base font-medium text-white mb-1">Boss Baby</div>
                             <div class="inline-flex rounded-md shadow-sm" role="group">
                                 <button type="button" class="inline-flex items-center py-1 px-2 text-xs font-light text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
                                     <svg aria-hidden="true" class="mr-2 w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
