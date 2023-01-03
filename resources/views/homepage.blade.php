@@ -2,13 +2,13 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
 
 <head>
+    <title>{{ config('app.name', 'DearBoss') }}</title>
+    <meta name="description" content="Your daily dose of funny memes, GIFs, videos and weird news stories. We deliver hundreds of new memes daily and much more humor anywhere you go.">
     <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'DearBoss') }}</title>
-    <meta name="description" content="Your daily dose of funny memes, GIFs, videos and weird news stories. We deliver hundreds of new memes daily and much more humor anywhere you go.">
-    <link rel="canonical" href="{{ config('app.url') }}">
+    <meta name="theme-color" content="#000">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@dearboss">
     <meta name="twitter:image" content="https://images-cdn.9gag.com/img/9gag-og.png">
@@ -18,11 +18,13 @@
     <meta property="og:url" content="{{ config('app.url') }}">
     <meta property="og:image" content="https://images-cdn.9gag.com/img/9gag-og.png">
     <meta property="og:type" content="website">
+    <link rel="canonical" href="{{ config('app.url') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-180.png">
     <link rel="apple-touch-icon" sizes="152x152" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-152.png">
     <link rel="apple-touch-icon" sizes="120x120" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-120.png">
     <link rel="apple-touch-icon" sizes="76x76" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-76.png">
-    <meta name="theme-color" content="#000">
+    <link rel="preload" fetchpriority="high" as="font" href="/build/assets/Inter-roman.var-17fe38ab.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" fetchpriority="high" as="image" href="/images/1.webp" type="image/webp">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -205,7 +207,6 @@
             </footer>
     </div>
     </main>
-    {{-- <link rel="stylesheet" href="/fonts/inter.css"> --}}
 </body>
 
 </html>
