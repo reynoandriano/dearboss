@@ -21,6 +21,16 @@
 }
 
 .h-screen {
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: 100vh;
+    /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
+}
+
+@font-face {
+    font-family: 'Inter var';
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    font-named-instance: 'Regular';
+    src: url("/public/fonts/Inter-roman.var.woff2") format("woff2");
 }

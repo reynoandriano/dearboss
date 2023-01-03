@@ -23,7 +23,6 @@
     <link rel="apple-touch-icon" sizes="120x120" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-120.png">
     <link rel="apple-touch-icon" sizes="76x76" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-76.png">
     <meta name="theme-color" content="#000">
-    <link rel="stylesheet" href="/fonts/inter.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -126,69 +125,87 @@
         </div>
     </header>
 
-    <main class="max-h-screen overflow-y-scroll snap snap-y snap-mandatory">
-        <h1 class="sr-only">Dear Boss! Siap laksanakan perintah.</h1>
-        @for ($i = 1; $i <= 24; $i++)<section class="relative w-full h-screen grid place-items-center text-gray-800 dark:text-gray-300 bg-white dark:bg-black snap-start">
-            <a href="/p/{{ $i }}">
-                <img src="/images/{{ $i }}.webp" width="640" height="960" alt="{{ $i }}" title="{{ $i }}"
-                    @if ($i > 1) loading="lazy"
-                    @else loading="eager"
-                    @endif />
-            </a>
-            <div class="absolute bottom-1/3 right-0 z-40 mr-2">
-            </div>
-            <blockquote class="absolute bottom-0 left-0 bg-gradient-to-b from-transparent to-black p-4 pb-6 md:flex md:flex-grow md:flex-col">
+    <main class="min-h-full">
+        <div class="max-h-screen overflow-y-scroll snap snap-y snap-mandatory">
+            <h1 class="sr-only">Dear Boss! Siap laksanakan perintah.</h1>
+            @for ($i = 1; $i <= 24; $i++)<section class="relative w-full h-screen grid place-items-center text-gray-800 dark:text-gray-300 bg-white dark:bg-black snap-start">
+                <a href="/p/{{ $i }}">
+                    <img src="/images/{{ $i }}.webp" width="640" height="960" alt="{{ $i }}" title="{{ $i }}"
+                        @if ($i > 1) loading="lazy"
+                        @else loading="eager"
+                        @endif />
+                </a>
+                <div class="absolute bottom-1/3 right-0 z-40 mr-2">
+                </div>
+                <blockquote class="absolute bottom-0 left-0 bg-gradient-to-b from-transparent to-black p-4 pb-6 md:flex md:flex-grow md:flex-col">
 
-                {{-- <div class="text-base font-medium text-indigo-200 mb-2">
-                    <a href="/cantik"><span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-base text-gray-800">#cantik</span></a>
-                    <a href="/fotogenik"><span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-base text-red-800">#fotogenik</span></a>
-                </div> --}}
-                
-                <p class="relative text-sm font-light text-gray-300 text-shadow-sm line-clamp-2 md:flex-grow">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit unde ut esse cupiditate temporibus. Et aspernatur quis nemo impedit. Repellendus numquam quos aperiam laboriosam deleniti totam nemo alias ducimus maiores?</p>
-                <figure class="relative mt-2">
-                    <div class="flex items-start">
-                        <div class="inline-flex flex-shrink-0 rounded-full border-2 border-gray-300">
-                            <img class="h-12 w-12 rounded-full" src="/images/bossbaby.webp" width="48" height="48" alt="Judith Black" title="Judith Black"
-                                @if ($i > 1) loading="lazy"
-                                @else loading="eager"
-                                @endif >
-                        </div>
-                        <div class="ml-4">
-                            <div class="text-base font-medium text-white mb-1">Boss Baby</div>
-                            <div class="inline-flex rounded-md shadow-sm" role="group">
-                                <button type="button" class="inline-flex items-center py-1 px-2 text-xs font-light text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                                    <svg aria-hidden="true" class="mr-2 w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clip-rule="evenodd" />
-                                    </svg>
-                                    1D
-                                </button>
-                                <button type="button" class="inline-flex items-center py-1 px-2 text-xs font-light text-gray-900 bg-transparent border-t border-b border-r border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                                    <svg aria-hidden="true" class="mr-2 w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
-                                    </svg>
-                                    0
-                                </button>
-                                <button type="button" class="inline-flex items-center py-1 px-2 text-xs font-light text-gray-900 bg-transparent border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                                    <svg aria-hidden="true" class="mr-2 w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z" clip-rule="evenodd" />
-                                    </svg>
-                                    0
-                                </button>
-                                <button type="button" class="inline-flex items-center py-1 px-2 text-xs font-light text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
-                                    <svg aria-hidden="true" class="mr-2 w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z" clip-rule="evenodd" />
-                                    </svg>
-                                    0
-                                </button>
+                    {{-- <div class="text-base font-medium text-indigo-200 mb-2">
+                        <a href="/cantik"><span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-base text-gray-800">#cantik</span></a>
+                        <a href="/fotogenik"><span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-base text-red-800">#fotogenik</span></a>
+                    </div> --}}
+                    
+                    <p class="relative text-sm font-light text-gray-300 text-shadow-sm line-clamp-2 md:flex-grow">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit unde ut esse cupiditate temporibus. Et aspernatur quis nemo impedit. Repellendus numquam quos aperiam laboriosam deleniti totam nemo alias ducimus maiores?</p>
+                    <figure class="relative mt-2">
+                        <div class="flex items-start">
+                            <div class="inline-flex flex-shrink-0 rounded-full border-2 border-gray-300">
+                                <img class="h-12 w-12 rounded-full" src="/images/bossbaby.webp" width="48" height="48" alt="Judith Black" title="Judith Black"
+                                    @if ($i > 1) loading="lazy"
+                                    @else loading="eager"
+                                    @endif >
+                            </div>
+                            <div class="ml-4">
+                                <div class="text-base font-medium text-white mb-1">Boss Baby</div>
+                                <div class="inline-flex rounded-md shadow-sm" role="group">
+                                    <button type="button" class="inline-flex items-center py-1 px-2 text-xs font-light text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                                        <svg aria-hidden="true" class="mr-2 w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clip-rule="evenodd" />
+                                        </svg>
+                                        1D
+                                    </button>
+                                    <button type="button" class="inline-flex items-center py-1 px-2 text-xs font-light text-gray-900 bg-transparent border-t border-b border-r border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                                        <svg aria-hidden="true" class="mr-2 w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+                                        </svg>
+                                        0
+                                    </button>
+                                    <button type="button" class="inline-flex items-center py-1 px-2 text-xs font-light text-gray-900 bg-transparent border-t border-b border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                                        <svg aria-hidden="true" class="mr-2 w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z" clip-rule="evenodd" />
+                                        </svg>
+                                        0
+                                    </button>
+                                    <button type="button" class="inline-flex items-center py-1 px-2 text-xs font-light text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                                        <svg aria-hidden="true" class="mr-2 w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" d="M15.75 4.5a3 3 0 11.825 2.066l-8.421 4.679a3.002 3.002 0 010 1.51l8.421 4.679a3 3 0 11-.729 1.31l-8.421-4.678a3 3 0 110-4.132l8.421-4.679a3 3 0 01-.096-.755z" clip-rule="evenodd" />
+                                        </svg>
+                                        0
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </figure>
-            </blockquote>
-        </section>
-        @endfor
+                    </figure>
+                </blockquote>
+            </section>
+            @endfor
+            <footer class="relative w-full h-screen grid place-items-center text-gray-800 dark:text-gray-300 bg-white dark:bg-black snap-end">
+                <div class="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+                    <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+                      <div class="px-5 py-2">
+                        <a href="/about" class="text-base text-gray-400 hover:text-gray-900">About</a>
+                      </div>
+                      <div class="px-5 py-2">
+                        <a href="/privacy" class="text-base text-gray-400 hover:text-gray-900">Privacy</a>
+                      </div>
+                      <div class="px-5 py-2">
+                        <a href="/terms" class="text-base text-gray-400 hover:text-gray-900">Terms</a>
+                      </div>
+                    </nav>
+                    <p class="mt-8 text-center text-base text-gray-300">&copy; 2023 Dear Boss. All rights reserved.</p>
+                  </div>
+            </footer>
+    </div>
     </main>
-
+    {{-- <link rel="stylesheet" href="/fonts/inter.css"> --}}
 </body>
 
 </html>
