@@ -3,8 +3,7 @@
 
 <head>
     <title>{{ config('app.name', 'DearBoss') }}</title>
-    <meta name="description" content="Your daily dose of funny memes, GIFs, videos and weird news stories. We deliver hundreds of new memes daily and much more humor anywhere you go.">
-    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <meta name="description" content="Dear Boss, apa kabar? Sudahkah anda bahagia hari ini? Kami siap laksanakan perintah memberi kebahagian bagi seluruh warganet.">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -12,9 +11,9 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@dearboss">
     <meta name="twitter:image" content="https://images-cdn.9gag.com/img/9gag-og.png">
-    <meta property="og:title" content="DearBoss - Best Funny Memes and Breaking News">
+    <meta property="og:title" content="Dear Boss - Sudahkah anda bahagia hari ini?">
     <meta property="og:site_name" content="DearBoss">
-    <meta property="og:description"  content="Your daily dose of funny memes, GIFs, videos and weird news stories. We deliver hundreds of new memes daily and much more humor anywhere you go.">
+    <meta property="og:description"  content="Dear Boss, apa kabar? Sudahkah anda bahagia hari ini? Kami siap laksanakan perintah membawa kebahagian bagi seluruh warganet.">
     <meta property="og:url" content="{{ config('app.url') }}">
     <meta property="og:image" content="https://images-cdn.9gag.com/img/9gag-og.png">
     <meta property="og:type" content="website">
@@ -188,24 +187,26 @@
                 </blockquote>
             </section>
             @endfor
-            <footer class="relative w-full h-screen grid place-items-center text-gray-800 dark:text-gray-300 bg-white dark:bg-black snap-end">
-                <div class="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
-                    <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
-                      <div class="px-5 py-2">
-                        <a href="/about" class="text-base text-gray-400 hover:text-gray-900">About</a>
-                      </div>
-                      <div class="px-5 py-2">
-                        <a href="/privacy" class="text-base text-gray-400 hover:text-gray-900">Privacy</a>
-                      </div>
-                      <div class="px-5 py-2">
-                        <a href="/terms" class="text-base text-gray-400 hover:text-gray-900">Terms</a>
-                      </div>
-                    </nav>
-                    <p class="mt-8 text-center text-base text-gray-300">&copy; 2023 Dear Boss. All rights reserved.</p>
-                  </div>
-            </footer>
     </div>
     </main>
+
+    <footer class="w-full h-screen grid place-items-center text-gray-800 dark:text-gray-300 bg-white dark:bg-black">
+        <div class="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+            <nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+                <div class="px-5 py-2">
+                    <a href="/about" class="text-base text-gray-400 hover:text-gray-900">About</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="/privacy" class="text-base text-gray-400 hover:text-gray-900">Privacy</a>
+                </div>
+                <div class="px-5 py-2">
+                    <a href="/terms" class="text-base text-gray-400 hover:text-gray-900">Terms</a>
+                </div>
+            </nav>
+            <p class="mt-8 text-center text-base text-gray-300">&copy; 2023 Dear Boss. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
