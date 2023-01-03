@@ -23,7 +23,6 @@
     <link rel="apple-touch-icon" sizes="152x152" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-152.png">
     <link rel="apple-touch-icon" sizes="120x120" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-120.png">
     <link rel="apple-touch-icon" sizes="76x76" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-76.png">
-    <link rel="preload" fetchpriority="high" as="font" href="/build/assets/Inter-roman.var-17fe38ab.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" fetchpriority="high" as="image" href="/images/1.webp" type="image/webp">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
