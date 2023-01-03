@@ -25,12 +25,6 @@
     <meta name="theme-color" content="#000">
     <link rel="stylesheet" href="/fonts/inter.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <style type="text/css">
-    .h-screen {
-        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-        height: calc(var(--vh, 1vh) * 100);
-    }
-    </style>
 </head>
 
 <body>
@@ -46,7 +40,7 @@
         </div>
 
         <div class="flex flex-1 justify-center px-2">
-            <div class="w-full max-w-lg lg:max-w-xs">
+            {{-- <div class="w-full max-w-lg lg:max-w-xs">
                 <label for="search" class="sr-only">Search</label>
                 <div class="relative text-gray-200 focus-within:text-gray-400">
                     <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -56,7 +50,7 @@
                     </div>
                     <input id="search" class="block w-full rounded-md border border-transparent bg-black/25 py-2 pl-8 pr-3 leading-5 text-gray-200 placeholder-gray-300 focus:border-white focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-1 focus:ring-offset-gray-600 text-sm" placeholder="Search" type="search" name="search">
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         <div class="flex items-center">
@@ -145,10 +139,10 @@
             </div>
             <blockquote class="absolute bottom-0 left-0 bg-gradient-to-b from-transparent to-black p-4 md:flex md:flex-grow md:flex-col">
 
-                <div class="text-base font-medium text-indigo-200 mb-2">
+                {{-- <div class="text-base font-medium text-indigo-200 mb-2">
                     <a href="/cantik"><span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-base text-gray-800">#cantik</span></a>
                     <a href="/fotogenik"><span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-base text-red-800">#fotogenik</span></a>
-                </div>
+                </div> --}}
                 
                 <p class="relative text-sm font-light text-gray-300 line-clamp-2 md:flex-grow">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit unde ut esse cupiditate temporibus. Et aspernatur quis nemo impedit. Repellendus numquam quos aperiam laboriosam deleniti totam nemo alias ducimus maiores?</p>
                 <figure class="relative mt-2">
@@ -195,14 +189,6 @@
         @endfor
     </main>
 
-    <script type="text/javascript">
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-        window.addEventListener('resize', () => {
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        });
-    </script>
 </body>
 
 </html>
