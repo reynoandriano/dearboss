@@ -137,7 +137,7 @@
             </a>
             <div class="absolute bottom-1/3 right-0 z-40 mr-2">
             </div>
-            <blockquote class="absolute bottom-0 left-0 bg-gradient-to-b from-transparent to-black p-4 md:flex md:flex-grow md:flex-col">
+            <blockquote class="absolute bottom-0 left-0 bg-gradient-to-b from-transparent to-black p-4 pb-6 md:flex md:flex-grow md:flex-col">
 
                 {{-- <div class="text-base font-medium text-indigo-200 mb-2">
                     <a href="/cantik"><span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-base text-gray-800">#cantik</span></a>
@@ -154,7 +154,7 @@
                                 @endif >
                         </div>
                         <div class="ml-4">
-                            <div class="text-base font-medium text-white">Judith Black</div>
+                            <div class="text-base font-medium text-white mb-1">Judith Black</div>
                             <div class="inline-flex rounded-md shadow-sm" role="group">
                                 <button type="button" class="inline-flex items-center py-1 px-2 text-xs font-light text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
                                     <svg aria-hidden="true" class="mr-2 w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
