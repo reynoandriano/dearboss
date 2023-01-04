@@ -18,10 +18,11 @@
     <meta property="og:image" content="https://images-cdn.9gag.com/img/9gag-og.png">
     <meta property="og:type" content="website">
     <link rel="canonical" href="{{ config('app.url') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-180.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-152.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-120.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://9gag.com/s/fab0aa49/20b08b48ab90040fe60737140aa062159e973a80/static/dist/es8/mobile/img/apple-touch-icon-76.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76.png">
     <link rel="preload" fetchpriority="high" as="image" href="/images/1.webp" type="image/webp">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>

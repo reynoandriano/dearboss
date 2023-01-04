@@ -1,0 +1,58 @@
+{
+    "short_name": "DearBoss",
+    "name": "Dear Boss, sudahkah anda bahagia hari ini?",
+    "icons": [
+        {
+            "src": "/images/pwa-icon.svg",
+            "type": "image/svg+xml",
+            "sizes": "512x512"
+        }
+    ],
+    "id": "/?source=pwa",
+    "start_url": "/?source=pwa",
+    "background_color": "#000000",
+    "display": "minimal-ui",
+    "scope": "/",
+    "theme_color": "#000000",
+    "shortcuts": [
+        {
+            "name": "What's trending now?",
+            "short_name": "Trending",
+            "description": "View what is trending now",
+            "url": "/?source=pwa",
+            "icons": [
+                {
+                    "src": "/images/pwa-trending.webp",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
+            "name": "What's happening now?",
+            "short_name": "Fresh",
+            "description": "View what is happening now",
+            "url": "/fresh?source=pwa",
+            "icons": [
+                {
+                    "src": "/images/pwa-fresh.webp",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ],
+    "description": "Kami siap laksanakan perintah memberi kebahagian bagi seluruh warganet.",
+    "screenshots": [
+        {
+            "src": "/images/screenshot1.webp",
+            "type": "image/webp",
+            "sizes": "540x946",
+            "form_factor": "narrow"
+        },
+        {
+            "src": "/images/screenshot2.webp",
+            "type": "image/webp",
+            "sizes": "720x371",
+            "form_factor": "wide"
+        }
+    ]
+}
