@@ -16,3 +16,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/storage
+/bootstrap/cache
+package-lock.json
