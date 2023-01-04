@@ -122,30 +122,21 @@
     <main class="min-h-full">
         <div class="max-h-screen overflow-y-scroll snap snap-y snap-mandatory">
             <h1 class="sr-only">Dear Boss! Siap laksanakan perintah.</h1>
-            @for ($i = 1; $i <= 24; $i++)<section class="relative w-full h-screen grid place-items-center text-gray-800 dark:text-gray-300 bg-white dark:bg-black snap-start">
-                <a href="/p/{{ $i }}">
-                    <img src="/images/{{ $i }}.webp" width="640" height="960" alt="{{ $i }}" title="{{ $i }}"
-                        @if ($i > 1) loading="lazy"
-                        @else loading="eager"
-                        @endif />
+            @foreach ($posts as $post)
+            {{-- @for ($i = 1; $i <= 24; $i++) --}}
+            <section class="relative w-full h-screen grid place-items-center text-gray-800 dark:text-gray-300 bg-white dark:bg-black snap-start">
+                <a href="/p/{{ $post['id'] }}">
+                    <img src="{{ $post['image'] }}" width="640" height="626" alt="{{ $post['text'] }}" title="{{ $post['text'] }}" loading="{{ $post['loading'] }}" />
                 </a>
                 <div class="absolute bottom-1/3 right-0 z-40 mr-2">
                 </div>
                 <blockquote class="absolute bottom-0 left-0 bg-gradient-to-b from-transparent to-black p-4 pb-6 md:flex md:flex-grow md:flex-col">
 
-                    {{-- <div class="text-base font-medium text-indigo-200 mb-2">
-                        <a href="/cantik"><span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-base text-gray-800">#cantik</span></a>
-                        <a href="/fotogenik"><span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-base text-red-800">#fotogenik</span></a>
-                    </div> --}}
-                    
-                    <p class="relative text-sm font-light text-gray-300 drop-shadow-md line-clamp-2 md:flex-grow">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit unde ut esse cupiditate temporibus. Et aspernatur quis nemo impedit. Repellendus numquam quos aperiam laboriosam deleniti totam nemo alias ducimus maiores?</p>
+                    <p class="relative text-sm font-light text-gray-300 drop-shadow-md line-clamp-2 md:flex-grow">{{ $post['text'] }}</p>
                     <figure class="relative mt-2">
                         <div class="flex items-start">
                             <div class="inline-flex flex-shrink-0 rounded-full border-2 border-gray-300">
-                                <img class="h-12 w-12 rounded-full" src="/images/bossbaby.webp" width="48" height="48" alt="Judith Black" title="Judith Black"
-                                    @if ($i > 1) loading="lazy"
-                                    @else loading="eager"
-                                    @endif >
+                                <img class="h-12 w-12 rounded-full" src="/images/bossbaby.webp" width="48" height="48" alt="Boss Baby" title="Boss Baby" loading="{{ $post['loading'] }}" />
                             </div>
                             <div class="ml-4">
                                 <div class="text-base font-medium text-white mb-1">Boss Baby</div>
@@ -180,10 +171,15 @@
                     </figure>
                 </blockquote>
             </section>
-            @endfor
+            @endforeach
+            {{-- @endfor --}}
     </div>
     </main>
     
 </body>
 
 </html>
+                    {{-- <div class="text-base font-medium text-indigo-200 mb-2">
+                        <a href="/cantik"><span class="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-base text-gray-800">#cantik</span></a>
+                        <a href="/fotogenik"><span class="inline-flex items-center rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-base text-red-800">#fotogenik</span></a>
+                    </div> --}}

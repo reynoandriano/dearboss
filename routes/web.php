@@ -15,7 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('homepage');
+    $faker = Faker\Factory::create();
+
+    $posts = [];
+    for ($i = 1; $i <= 24; $i++) {
+        $posts[] = [
+            'id' => $i,
+            'image' => '/images/' . $i . '.webp',
+            'text' => $faker->paragraph(),
+            'loading' => ($i <= 5) ? 'eager' : 'lazy'
+        ];
+    }
+    
+    return view('homepage', compact('posts'));
 });
 
 Route::get('/dashboard', function () {
@@ -28,4 +40,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
