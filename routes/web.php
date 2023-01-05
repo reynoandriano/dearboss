@@ -55,7 +55,7 @@ Route::get('/auth/callback', function () {
 
     Illuminate\Support\Facades\Auth::login($user);
 
-    return redirect()->back();
+    return redirect('/');
 })->name('auth.callback');
 
 Route::get('/upload', function () {
