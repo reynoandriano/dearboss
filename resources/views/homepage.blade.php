@@ -91,6 +91,11 @@
                                     </a>
                                     @endfor
                                 </nav>
+
+                                @auth
+                                <div class="text-white text-center text-xs mt-8">{{ Auth::user()->email }}</div>
+                                @endauth
+
                                 <div class="absolute bottom-0 left-0 w-full mb-2 text-center">
                                     <a href="/about" class="text-gray-500 hover:bg-gray-700 hover:text-white px-2 py-1 text-xs font-base rounded-md">
                                         About

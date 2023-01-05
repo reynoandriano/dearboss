@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,18 +30,46 @@ officia deserunt mollit anim id est laborum.',
             'loading' => ($i <= 5) ? 'eager' : 'lazy'
         ];
     }
-    
+
     return view('homepage', compact('posts'));
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/auth/redirect', function () {
+    return Socialite::driver('google')->redirect();
+})->name('auth.redirect');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+Route::get('/auth/callback', function () {
+    $user = Socialite::driver('google')->stateless()->user();
 
-require __DIR__ . '/auth.php';
+    $user = App\Models\User::updateOrCreate([
+        'google_id' => $user->getId(),
+    ], [
+        'nickname' => $user->getNickname(),
+        'name' => $user->getName(),
+        'email' => $user->getEmail(),
+        'avatar' => $user->getAvatar(),
+        'google_token' => $user->token,
+        'google_refresh_token' => $user->refreshToken,
+        'google_expires_in' => $user->expiresIn,
+    ]);
+
+    Illuminate\Support\Facades\Auth::login($user);
+
+    return redirect()->back();
+})->name('auth.callback');
+
+Route::get('/upload', function () {
+    return 'upload';
+})->middleware(['auth'])->name('upload');
+
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
+
+// require __DIR__ . '/auth.php';

@@ -18,9 +18,14 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'google_id',
+        'nickname',
         'name',
         'email',
-        'password',
+        'avatar',
+        'google_token',
+        'google_refresh_token',
+        'google_expires_in',
     ];
 
     /**
@@ -29,7 +34,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
+        'google_id',
+        'google_token',
+        'google_refresh_token',
+        'google_expires_in',
         'remember_token',
     ];
 
@@ -39,6 +47,6 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        // 'email_verified_at' => 'datetime',
     ];
 }
