@@ -1,8 +1,7 @@
 <x-main-layout
     page-title="Dear Boss, terms and conditions"
     page-description="Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae feugiat egestas ac."
-    cover-image="{{ config('app.url') }}/images/cover.jpg"
-    cover-type="image/jpeg"
+    cover-image="{{ config('app.url') }}/images/cover.webp"
     >
     <main>
         <div class="relative overflow-hidden bg-white dark:bg-black py-16">
@@ -85,8 +84,8 @@
                         sit neque erat velit.</p>
                     <figure>
                         <img class="w-full rounded-lg"
-                            src="/images/cover.jpg"
-                            alt="terms" title="terms" width="1310" height="873">
+                            src="/images/cover.webp"
+                            alt="terms" title="terms" width="1200" height="900">
                         <figcaption>Sagittis scelerisque nulla cursus in enim consectetur quam.</figcaption>
                     </figure>
                     <h2>Everything you need to get up and running</h2>
