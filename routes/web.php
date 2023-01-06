@@ -62,6 +62,10 @@ Route::get('/upload', function () {
     return 'upload';
 })->middleware(['auth'])->name('upload');
 
+Route::view('/about', 'about');
+Route::view('/privacy', 'privacy');
+Route::view('/terms', 'terms');
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
