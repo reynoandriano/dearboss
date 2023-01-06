@@ -106,6 +106,13 @@
                                     <a href="/terms" class="text-gray-500 hover:bg-gray-700 hover:text-white px-2 py-1 text-xs font-base rounded-md">
                                         Terms
                                     </a>
+                                    <a href="/disclaimer" class="text-gray-500 hover:bg-gray-700 hover:text-white px-2 py-1 text-xs font-base rounded-md">
+                                        Disclaimer
+                                    </a>
+
+                                    <p class="text-gray-500 px-2 py-1 text-xs font-base mt-4">
+                                        &copy;2023 DearBoss
+                                    </p>
                                 </div>
                             </div>
                         </div>

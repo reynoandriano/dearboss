@@ -1,8 +1,6 @@
-<x-main-layout
-    page-title="Dear Boss, do you know us?"
+<x-main-layout page-title="Dear Boss, disclaimer"
     page-description="Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae feugiat egestas ac."
-    cover-image="{{ config('app.url') }}/images/cover.webp"
-    >
+    cover-image="{{ config('app.url') }}/images/cover.webp">
     <main>
         <div class="relative overflow-hidden bg-white dark:bg-black py-16">
             <div class="hidden lg:absolute lg:inset-y-0 lg:block lg:h-full lg:w-full lg:[overflow-anchor:none]">
@@ -44,15 +42,18 @@
                     <h1>
                         <span class="block text-center text-lg font-semibold text-red-500">Dear Boss,</span>
                         <span
-                            class="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200 sm:text-4xl">Do
-                            you know us?</span>
+                            class="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200 sm:text-4xl">Disclaimer</span>
                     </h1>
                 </div>
-                <div
-                    class="prose prose-lg prose-red dark:prose-invert mx-auto mt-6 text-gray-500 dark:text-gray-400">
-                    <p><strong>DearBoss</strong> adalah tempat berbagi cerita-cerita bergambar lucu, menyenangkan, indah dan cantik. Tebarkan aura positif untuk warganet dimana pun.</p>
+                <div class="prose prose-lg prose-red dark:prose-invert mx-auto mt-6 text-gray-500 dark:text-gray-400">
+                    <p>By using <strong>DearBoss</strong>, you agree to the following conditions : User expressly agrees
+                        that use of <strong>DearBoss</strong> is at the user's sole risk and it is not the risk of the
+                        owner or the webhost. User specifically acknowledges <strong>DearBoss</strong> is not liable for
+                        the defamatory, offensive or illegal conduct of other user or third-parties in cases including
+                        but not limited to any interactive communication on or through the site and that the risk from
+                        the foregoing, rests entirely with user(s).</p>
                     <p>
-                        Hubungi kami: <a href="mailto:baby@dearboss.id">baby@dearboss.id</a>
+                        More information: <a href="mailto:baby@dearboss.id">baby@dearboss.id</a>
                     </p>
                 </div>
             </div>

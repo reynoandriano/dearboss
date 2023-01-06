@@ -62,9 +62,10 @@ Route::get('/upload', function () {
     return 'upload';
 })->middleware(['auth'])->name('upload');
 
-Route::view('/about', 'about');
-Route::view('/privacy', 'privacy');
-Route::view('/terms', 'terms');
+Route::view('/about', 'about')->name('about');
+Route::view('/privacy', 'privacy')->name('privacy');
+Route::view('/terms', 'terms')->name('terms');
+Route::view('/disclaimer', 'disclaimer')->name('disclaimer');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
