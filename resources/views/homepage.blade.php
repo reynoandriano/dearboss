@@ -1,6 +1,6 @@
 <x-main-layout page-title="Dear Boss, apa kabar hari ini?"
     page-description="Dear Boss, sudahkah anda bahagia hari ini? Kami siap laksanakan perintah memberi kebahagian bagi seluruh warganet."
-    cover-image="{{ config('app.url') . '/uploads/' . $posts[0]['id'] . '.webp' }}"
+    cover-image="{{ config('app.url') . '/storage/uploads/' . $posts[0]['id'] . '.webp' }}"
     cover-type="image/webp"
     upload-button="true">
 
@@ -12,9 +12,9 @@
                 class="relative w-full h-screen grid place-items-center text-gray-800 dark:text-gray-300 bg-white dark:bg-black snap-start">
                 <a href="{{ route('posts.show', $post) }}">
                     <picture>
-                        <source srcset="/uploads/{{ $post['id'] }}.webp" type="image/webp" />
-                        <source srcset="/uploads/{{ $post['id'] }}.jpg" type="image/jpeg" />
-                        <img src="/uploads/{{ $post['id'] }}.jpg" width="640" height="640" alt="{{ $post['text'] }}"
+                        <source srcset="/storage/uploads/{{ $post['id'] }}.webp" type="image/webp" />
+                        <source srcset="/storage/uploads/{{ $post['id'] }}.jpg" type="image/jpeg" />
+                        <img src="/storage/uploads/{{ $post['id'] }}.jpg" width="640" height="640" alt="{{ $post['text'] }}"
                             title="{{ $post['text'] }}"
                             @if ($loop->first) loading="eager"
                             @else loading="lazy"

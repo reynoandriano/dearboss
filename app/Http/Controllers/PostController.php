@@ -49,7 +49,7 @@ class PostController extends Controller
 
             $source_file = storage_path('app/temp/' . $temp);
             $target_name = $user->id;
-            $target_dir = public_path('uploads/');
+            $target_dir = storage_path('app/public/uploads/');
 
             $webp = Image::make($source_file)->encode('webp');
             $webp->resize(640, null, function ($constraint) {
