@@ -69,11 +69,18 @@ class PostController extends Controller
             $user->published_at = now();
             $user->save();
 
-            return back()
-                ->with('success', 'You have successfully upload file.');
+            return redirect('/')
+                ->with('success', 'file upload completed')
+                ->with('success_title', 'Upload Success')
+                ->with('success_message', 'Your photo or video will displayed shortly.')
+                ->with('success_button', 'Close');
         }
 
-        return redirect('/');
+        return back()
+            ->with('error', 'something wrong')
+            ->with('error_title', 'Upload Failed')
+            ->with('error_message', 'Something is wrong while saving your photo or video.')
+            ->with('error_button', 'Try Again');
     }
 
     /**

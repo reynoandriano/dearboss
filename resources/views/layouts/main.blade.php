@@ -144,6 +144,9 @@
     </div>
     @endif
 
+    @if (session('success'))
+        <x-alert-success title="{{ session('success_title') }}" message="{{ session('success_message') }}" button="{{ session('success_button') }}" />
+    @endif
 </body>
 
 </html>

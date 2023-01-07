@@ -13,7 +13,7 @@
                             <label for="post-file"
                                 class="p-1 cursor-pointer rounded-md bg-red-500 font-medium text-white focus-within:outline-none focus-within:ring-2 focus-within:ring-red-500 focus-within:ring-offset-2 hover:text-white">
                                 <span class="p-1">Select a file</span>
-                                <input id="post-file" name="postFile" type="file" accept="image/*" @change="showPreview(event)" class="sr-only" required>
+                                <input id="post-file" name="postFile" type="file" accept="image/*" @change="showPreview(event)" class="sr-only" required />
                             </label>
                         </div>
                         <p class="text-xs text-gray-400 mt-2">PNG, JPG, MP4, AVI up to 30MB</p>
@@ -23,7 +23,7 @@
                 <div class="mt-8">
                     <label for="about" class="block text-sm font-medium text-gray-500">Description</label>
                     <div class="mt-1">
-                        <textarea id="post-text" name="postText" rows="4" class="block w-full rounded-md border-gray-600 shadow-sm dark:bg-gray-700 focus:border-red-500 focus:ring-red-500 sm:text-sm" maxlength="140" required></textarea>
+                        <textarea id="post-text" name="postText" rows="4" class="block w-full rounded-md border-gray-600 shadow-sm dark:bg-gray-700 focus:border-red-500 focus:ring-red-500 sm:text-sm" maxlength="140" required>{{ old('postText') }}</textarea>
                     </div>
                     <p class="mt-2 text-sm text-gray-500">Write a few sentences about photo/video max 140 characters.
                     </p>
@@ -37,15 +37,10 @@
         </form>
 
 @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
+        <x-alert-error title="Upload Failed" message="{{ $errors->first() }}" button="Try Again" />
 @endif
     </main>
+
     <script type="text/javascript">
         function formAction() {
         return {
