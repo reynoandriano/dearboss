@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
@@ -17,7 +18,7 @@ use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
     $posts = [];
-    for ($i = 1; $i <= 24; $i++) {
+    for ($i = 1; $i <= 20; $i++) {
         $posts[] = [
             'id' => $i,
             'image' => '/images/' . $i . '.webp',
@@ -58,9 +59,7 @@ Route::get('/auth/callback', function () {
     return redirect('/');
 })->name('auth.callback');
 
-Route::get('/upload', function () {
-    return 'upload';
-})->middleware(['auth'])->name('upload');
+Route::get('/upload', [PostController::class, 'create'])->middleware(['auth'])->name('upload');
 
 Route::view('/about', 'about')->name('about');
 Route::view('/privacy', 'privacy')->name('privacy');

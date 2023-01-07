@@ -1,11 +1,14 @@
 <x-main-layout page-title="Dear Boss, apa kabar hari ini?"
-    page-description="Dear Boss, sudahkah anda bahagia hari ini? Kami siap laksanakan perintah memberi kebahagian bagi seluruh warganet.">
+    page-description="Dear Boss, sudahkah anda bahagia hari ini? Kami siap laksanakan perintah memberi kebahagian bagi seluruh warganet."
+    cover-image="{{ config('app.url') . $posts[0]['image'] }}"
+    cover-type="image/webp"
+    upload-button="true">
 
     <main class="min-h-full">
         <div class="max-h-screen overflow-y-scroll snap snap-y snap-mandatory">
             <h1 class="sr-only">Dear Boss! Siap laksanakan perintah.</h1>
             @foreach ($posts as $post)
-            {{-- @for ($i = 1; $i <= 24; $i++) --}} <section
+            <section
                 class="relative w-full h-screen grid place-items-center text-gray-800 dark:text-gray-300 bg-white dark:bg-black snap-start">
                 <a href="/p/{{ $post['id'] }}">
                     <picture>
@@ -80,9 +83,8 @@
                         </div>
                     </figure>
                 </blockquote>
-                </section>
-                @endforeach
-                {{-- @endfor --}}
+            </section>
+            @endforeach
         </div>
     </main>
 </x-main-layout>

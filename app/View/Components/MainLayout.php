@@ -10,24 +10,26 @@ class MainLayout extends Component
     public $pageDescription;
     public $coverImage;
     public $coverType;
+    public $uploadButton;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($pageTitle, $pageDescription, $coverImage = '', $coverType = "image/webp")
+    public function __construct($pageTitle, $pageDescription, $coverImage = '', $coverType = "image/webp", $uploadButton = false)
     {
         $this->pageTitle = $pageTitle;
         $this->pageDescription = $pageDescription;
 
         if($coverImage === '') {
-            $this->coverImage = config('app.url').'/images/cover.jpg';
+            $this->coverImage = config('app.url').'/images/cover.webp';
         } else {
             $this->coverImage = $coverImage;
         }
 
         $this->coverType = $coverType;
+        $this->uploadButton = $uploadButton;
     }
 
     /**
