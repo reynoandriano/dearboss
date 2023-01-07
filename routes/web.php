@@ -78,3 +78,5 @@ Route::view('/disclaimer', 'disclaimer')->name('disclaimer');
 // });
 
 // require __DIR__ . '/auth.php';
+
+// ffmpeg -i test.mp4 -vf scale=460:-1 -b:v 0 -crf 30 -pass 1 -an -f webm -y /dev/null && ffmpeg -i test.mp4 -vf scale=460:-1 -b:v 0 -crf 30 -pass 2 testa.webm
