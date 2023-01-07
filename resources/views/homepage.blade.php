@@ -21,10 +21,9 @@
                             @endif />
                     </picture>
                 </a>
-                <div class="absolute bottom-1/3 right-0 z-40 mr-2">
-                </div>
+
                 <blockquote
-                    class="absolute bottom-0 left-0 bg-gradient-to-b from-transparent to-black p-4 pb-6 md:flex md:flex-grow md:flex-col">
+                    class="absolute bottom-0 left-0 bg-gradient-to-b from-transparent to-black w-full p-4 pb-6 md:flex md:flex-grow md:flex-col">
 
                     <p class="relative text-sm font-light text-gray-300 drop-shadow-md line-clamp-2 md:flex-grow">{{
                         $post['text'] }}</p>
