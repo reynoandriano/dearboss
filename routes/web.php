@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -16,24 +17,7 @@ use Laravel\Socialite\Facades\Socialite;
 |
 */
 
-Route::get('/', function () {
-    $posts = [];
-    for ($i = 1; $i <= 20; $i++) {
-        $posts[] = [
-            'id' => $i,
-            'image' => '/images/' . $i . '.webp',
-            'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
-eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui 
-officia deserunt mollit anim id est laborum.',
-            'loading' => ($i <= 5) ? 'eager' : 'lazy'
-        ];
-    }
-
-    return view('homepage', compact('posts'));
-});
+Route::get('/', [PageController::class, 'homepage'])->name('homepage');
 
 Route::get('/auth/redirect', function () {
     return Socialite::driver('google')->redirect();
@@ -60,6 +44,8 @@ Route::get('/auth/callback', function () {
 })->name('auth.callback');
 
 Route::get('/upload', [PostController::class, 'create'])->middleware(['auth'])->name('upload');
+Route::post('/upload', [PostController::class, 'store'])->middleware('auth')->name('posts.store');
+Route::get('/p/{post}', [PostController::class, 'show'])->name('posts.show');
 
 Route::view('/about', 'about')->name('about');
 Route::view('/privacy', 'privacy')->name('privacy');

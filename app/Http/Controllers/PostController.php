@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PostStoreRequest;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Image;
 
 class PostController extends Controller
 {
@@ -33,9 +36,44 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostStoreRequest $request)
     {
-        //
+        $temp = time() . '.' . $request->postFile->extension();
+
+        if ($request->postFile->storeAs('temp', $temp)) {
+            $text = $request->postText;
+
+            $user = auth()->user()->posts()->create([
+                'text' => $text,
+            ]);
+
+            $source_file = storage_path('app/temp/' . $temp);
+            $target_name = $user->id;
+            $target_dir = public_path('uploads/');
+
+            $webp = Image::make($source_file)->encode('webp');
+            $webp->resize(640, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            $webp->save($target_dir . $target_name . '.webp');
+
+            $jpeg = Image::make($source_file)->encode('jpeg');
+            $jpeg->resize(640, null, function ($constraint) {
+                $constraint->aspectRatio();
+            });
+            $jpeg->save($target_dir . $target_name . '.jpg');
+
+            File::delete($source_file);
+
+            $user->published = true;
+            $user->published_at = now();
+            $user->save();
+
+            return back()
+                ->with('success', 'You have successfully upload file.');
+        }
+
+        return redirect('/');
     }
 
     /**

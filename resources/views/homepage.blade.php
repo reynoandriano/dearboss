@@ -1,6 +1,6 @@
 <x-main-layout page-title="Dear Boss, apa kabar hari ini?"
     page-description="Dear Boss, sudahkah anda bahagia hari ini? Kami siap laksanakan perintah memberi kebahagian bagi seluruh warganet."
-    cover-image="{{ config('app.url') . $posts[0]['image'] }}"
+    cover-image="{{ config('app.url') . '/uploads/' . $posts[0]['id'] . '.webp' }}"
     cover-type="image/webp"
     upload-button="true">
 
@@ -10,12 +10,15 @@
             @foreach ($posts as $post)
             <section
                 class="relative w-full h-screen grid place-items-center text-gray-800 dark:text-gray-300 bg-white dark:bg-black snap-start">
-                <a href="/p/{{ $post['id'] }}">
+                <a href="{{ route('posts.show', $post) }}">
                     <picture>
-                        <source srcset="{{ $post['image'] }}" type="image/webp" />
-                        <source srcset="/images/bossbaby.jpg" type="image/jpeg" />
-                        <img src="{{ $post['image'] }}" width="640" height="626" alt="{{ $post['text'] }}"
-                            title="{{ $post['text'] }}" loading="{{ $post['loading'] }}" />
+                        <source srcset="/uploads/{{ $post['id'] }}.webp" type="image/webp" />
+                        <source srcset="/uploads/{{ $post['id'] }}.jpg" type="image/jpeg" />
+                        <img src="/uploads/{{ $post['id'] }}.jpg" width="640" height="640" alt="{{ $post['text'] }}"
+                            title="{{ $post['text'] }}"
+                            @if ($loop->first) loading="eager"
+                            @else loading="lazy"
+                            @endif />
                     </picture>
                 </a>
                 <div class="absolute bottom-1/3 right-0 z-40 mr-2">
@@ -29,15 +32,17 @@
                         <div class="flex items-start">
                             <div class="inline-flex flex-shrink-0 rounded-full border-2 border-gray-300">
                                 <picture>
-                                    <source srcset="/images/bossbaby.webp" type="image/webp" />
-                                    <source srcset="/images/bossbaby.jpg" type="image/jpeg" />
-                                    <img class="h-12 w-12 rounded-full" src="/images/bossbaby.jpg" width="96"
-                                        height="96" alt="Boss Baby" title="Boss Baby"
-                                        loading="{{ $post['loading'] }}" />
+                                    {{-- <source srcset="/images/bossbaby.webp" type="image/webp" /> --}}
+                                    <source srcset="{{ $post->user->avatar }}" type="image/jpeg" />
+                                    <img class="h-12 w-12 rounded-full" src="{{ $post->user->avatar }}" width="96"
+                                        height="96" alt="{{ $post->user->name }}" title="{{ $post->user->name }}"
+                                        @if ($loop->first) loading="eager"
+                                        @else loading="lazy"
+                                        @endif />
                                 </picture>
                             </div>
                             <div class="ml-4">
-                                <div class="text-base font-medium text-white mb-1">Boss Baby</div>
+                                <div class="text-base font-medium text-white mb-1">{{ $post->user->name }}</div>
                                 <div class="inline-flex rounded-md shadow-sm" role="group">
                                     <button type="button"
                                         class="inline-flex items-center py-1 px-2 text-xs font-light text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
