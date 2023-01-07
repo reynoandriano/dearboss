@@ -20,6 +20,10 @@ class PageController extends Controller
             ->with('user')
             ->get();
 
+        if ($posts->isEmpty()) {
+            return 'homepage';
+        }
+
         return view('homepage', compact('posts'));
     }
 }

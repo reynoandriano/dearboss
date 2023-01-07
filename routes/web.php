@@ -38,7 +38,7 @@ Route::get('/auth/callback', function () {
         'google_expires_in' => $user->expiresIn,
     ]);
 
-    Illuminate\Support\Facades\Auth::login($user);
+    Illuminate\Support\Facades\Auth::login($user, true);
 
     return redirect('/');
 })->name('auth.callback');

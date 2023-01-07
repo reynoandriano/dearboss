@@ -23,6 +23,7 @@ return new class extends Migration
             $table->text('google_token')->nullable();
             $table->text('google_refresh_token')->nullable();
             $table->integer('google_expires_in')->default(0);
+            $table->rememberToken();
             $table->timestamps();
 
             $table->index('created_at');
